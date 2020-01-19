@@ -34,7 +34,7 @@ function string LocalizeItem(string Key)
 
 	if (InStr(Locale, "?INT?") > 0)
 	{
-		`LOG(default.class @ GetFuncName() @ "Warning localization not found:" @ Key @ "in" @ name @ default.class,, 'MusashisModToolbox');
+		//`LOG(default.class @ GetFuncName() @ "Warning localization not found:" @ Key @ "in" @ name @ default.class,, 'MusashisModToolbox');
 	}
 	
 	return Locale;
@@ -55,7 +55,7 @@ private function DeserializeConfig()
 	local string SanitizedJsonString, SerializedMCMPage;
 	local array<string> LocalMCMPages;
 
-	//`LOG(default.class @ GetFuncName() @ "found entries:" @ MCMPages.Length,, 'MusashisModToolbox');
+	////`LOG(default.class @ GetFuncName() @ "found entries:" @ MCMPages.Length,, 'MusashisModToolbox');
 
 	LocalMCMPages = GetConfig();
 

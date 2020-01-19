@@ -26,7 +26,7 @@ static public function JsonConfig_ManagerInterface GetConfigManager(string Insta
 
 	ConfigManager = new (none, InstanceName) default.class;
 	
-	`LOG(default.class @ GetFuncName() @ `ShowVar(ConfigManager) @ `ShowVar(InstanceName) @ `ShowVar(default.class) @ `ShowVar(JsonConfig_ManagerInterface(ConfigManager)),, 'MusashisModToolbox');
+	//`LOG(default.class @ GetFuncName() @ `ShowVar(ConfigManager) @ `ShowVar(InstanceName) @ `ShowVar(default.class) @ `ShowVar(JsonConfig_ManagerInterface(ConfigManager)),, 'MusashisModToolbox');
 
 	ConfigManager.DeserializeConfig();
 
@@ -48,7 +48,7 @@ public function SetDefaultConfigManager(string InstanceName)
 	local JsonConfig_ManagerInterface LocalJsonConfig_ManagerInterface;
 	LocalJsonConfig_ManagerInterface = class'JsonConfig_ManagerDefault'.static.GetConfigManager(InstanceName, false);
 	DefaultConfigManager = JsonConfig_Manager(LocalJsonConfig_ManagerInterface);
-	`LOG(default.class @ GetFuncName() @ `ShowVar(InstanceName) @ `ShowVar(DefaultConfigManager),, 'MusashisModToolbox');
+	//`LOG(default.class @ GetFuncName() @ `ShowVar(InstanceName) @ `ShowVar(DefaultConfigManager),, 'MusashisModToolbox');
 }
 
 public function SerializeAndSaveConfig()
@@ -67,7 +67,7 @@ private function DeserializeConfig()
 
 	GetPerObjectConfigSections(self.Class, Sections);
 
-	`LOG(default.class @ GetFuncName() @ self.Name @ "found entries:" @ ConfigProperties.Length @ Sections[0],, 'MusashisModToolbox');
+	//`LOG(default.class @ GetFuncName() @ self.Name @ "found entries:" @ ConfigProperties.Length @ Sections[0],, 'MusashisModToolbox');
 
 	foreach ConfigProperties(SerializedConfigProperty)
 	{
@@ -218,7 +218,7 @@ public function vector GetConfigVectorValue(coerce string PropertyName, optional
 
 	if (ConfigProperty != none)
 	{
-		//`LOG(default.class @ GetFuncName() @ `ShowVar(PropertyName) @ "Value:" @ ConfigProperty.VectorValue.ToString() @ `ShowVar(Namespace),, 'MusashisModToolbox');
+		////`LOG(default.class @ GetFuncName() @ `ShowVar(PropertyName) @ "Value:" @ ConfigProperty.VectorValue.ToString() @ `ShowVar(Namespace),, 'MusashisModToolbox');
 		return ConfigProperty.GetVectorValue();
 	}
 
@@ -234,7 +234,7 @@ public function array<string> GetConfigStringArray(coerce string PropertyName, o
 
 	if (ConfigProperty != none)
 	{
-		//`LOG(default.class @ GetFuncName() @ `ShowVar(PropertyName) @ "Value:" @ ConfigProperty.ArrayValue.ToString() @ `ShowVar(Namespace),, 'MusashisModToolbox');
+		////`LOG(default.class @ GetFuncName() @ `ShowVar(PropertyName) @ "Value:" @ ConfigProperty.ArrayValue.ToString() @ `ShowVar(Namespace),, 'MusashisModToolbox');
 		return ConfigProperty.GetArrayValue();
 	}
 
@@ -253,7 +253,7 @@ public function WeaponDamageValue GetConfigDamageValue(coerce string PropertyNam
 	if (ConfigProperty != none)
 	{
 		Value =  ConfigProperty.GetDamageValue();
-		//`LOG(default.class @ GetFuncName() @ `ShowVar(PropertyName) @ "Value:" @ ConfigProperty.DamageValue.ToString() @ `ShowVar(Namespace),, 'MusashisModToolbox');
+		////`LOG(default.class @ GetFuncName() @ `ShowVar(PropertyName) @ "Value:" @ ConfigProperty.DamageValue.ToString() @ `ShowVar(Namespace),, 'MusashisModToolbox');
 	}
 
 	return Value;
@@ -269,7 +269,7 @@ public function string GetConfigStringValue(coerce string PropertyName, optional
 	if (ConfigProperty != none)
 	{
 		Value =  ConfigProperty.GetValue(TagFunction);
-		//`LOG(default.class @ GetFuncName() @ `ShowVar(PropertyName) @ `ShowVar(Value) @ `ShowVar(TagFunction) @ `ShowVar(Namespace),, 'MusashisModToolbox');
+		////`LOG(default.class @ GetFuncName() @ `ShowVar(PropertyName) @ `ShowVar(Value) @ `ShowVar(TagFunction) @ `ShowVar(Namespace),, 'MusashisModToolbox');
 	}
 
 	return Value;
@@ -310,7 +310,7 @@ public function JsonConfig_TaggedConfigProperty GetConfigProperty(
 		return DefaultConfigManager.GetConfigProperty(PropertyName, Namespace);
 	}
 
-	`LOG(default.class @ GetFuncName() @ "could not find config property for" @ PropertyName @ DeserialzedConfigPropertyMap.Length,, 'MusashisModToolbox');
+	//`LOG(default.class @ GetFuncName() @ "could not find config property for" @ PropertyName @ DeserialzedConfigPropertyMap.Length,, 'MusashisModToolbox');
 
 	return none;
 }

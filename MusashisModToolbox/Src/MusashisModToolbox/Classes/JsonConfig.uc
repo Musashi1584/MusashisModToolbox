@@ -36,7 +36,7 @@ static public function string SanitizeJson(string Json)
 		InStr(Buffer, "\"{") != INDEX_NONE ||
 		CountDoubleQuotes % 2 != 0)
 	{
-		`LOG(default.class @ GetFuncName() @ "Warning: invalid json" @ Buffer,, 'MusashisModToolbox');
+		//`LOG(default.class @ GetFuncName() @ "Warning: invalid json" @ Buffer,, 'MusashisModToolbox');
 		return "";
 	}
 

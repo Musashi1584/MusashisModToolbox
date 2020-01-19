@@ -129,9 +129,6 @@
     <Content Include="Src\MusashisModToolbox\Classes\JsonConfig_WeaponDamageValue.uc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Src\MusashisModToolbox\Classes\MCM_Builder.uc">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Src\MusashisModToolbox\Classes\MCM_Builder_Defaults.uc">
       <SubType>Content</SubType>
     </Content>

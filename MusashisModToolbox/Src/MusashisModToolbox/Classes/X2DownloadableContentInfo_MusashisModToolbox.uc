@@ -16,18 +16,18 @@ class X2DownloadableContentInfo_MusashisModToolbox extends X2DownloadableContent
 /// </summary>
 static event OnPostTemplatesCreated()
 {
-	local JsonConfig_ManagerInterFace TestConfigManager;
-	local string TestValue;
-
-	TestConfigManager = class'ConfigFactory'.static.GetConfigManager("TestConfigManager");
-
-	TestConfigManager.SetConfigString("FOO", "BAR");
-	TestConfigManager.SetConfigString("FOO2", "BAR2");
-	TestConfigManager.SerializeAndSaveConfig();
-
-	TestValue = TestConfigManager.GetConfigStringValue("A_STRING_PROPERTY");
-
-	`LOG(default.class @ GetFuncName() @ `ShowVar(TestValue) @ `ShowVar(TestConfigManager.GetDefaultConfigManager()),, 'MusashisModToolbox');
+	//local JsonConfig_ManagerInterFace TestConfigManager;
+	//local string TestValue;
+	//
+	//TestConfigManager = class'ConfigFactory'.static.GetConfigManager("TestConfigManager");
+	//
+	//TestConfigManager.SetConfigString("FOO", "BAR");
+	//TestConfigManager.SetConfigString("FOO2", "BAR2");
+	//TestConfigManager.SerializeAndSaveConfig();
+	//
+	//TestValue = TestConfigManager.GetConfigStringValue("A_STRING_PROPERTY");
+	//
+	////`LOG(default.class @ GetFuncName() @ `ShowVar(TestValue) @ `ShowVar(TestConfigManager.GetDefaultConfigManager()),, 'MusashisModToolbox');
 }
 
 

@@ -145,7 +145,7 @@ simulated function BuildMCM(
 						);
 						break;
 					default:
-						`LOG(default.class @ GetFuncName() @ "unknown MCM element type" @ MCMElementConfig.Type);
+						//`LOG(default.class @ GetFuncName() @ "unknown MCM element type" @ MCMElementConfig.Type);
 						break;
 				}
 			}
@@ -349,7 +349,15 @@ simulated function ResetButtonClicked(MCM_API_SettingsPage Page)
 						break;
 					case eSettingType_Dropdown:
 						Dropdown = MCM_API_Dropdown(Setting);
-						Dropdown.SetValue(DefaultConfigManager.GetConfigStringValue(Dropdown.GetName()), true);
+						if (Dropdown == none)
+						{
+							Spinner = MCM_API_Spinner(Setting);
+							Spinner.SetValue(DefaultConfigManager.GetConfigStringValue(Spinner.GetName()), true);
+						}
+						else
+						{
+							Dropdown.SetValue(DefaultConfigManager.GetConfigStringValue(Dropdown.GetName()), true);
+						}
 						break;
 					case eSettingType_Spinner:
 						Spinner = MCM_API_Spinner(Setting);
@@ -397,7 +405,7 @@ simulated public function JsonConfig_MCM_Page GetPage(int PageID)
 		}
 	}
 
-	`LOG(default.class @ GetFuncName() @ Builder @ "could not find MCMConfigPage for" @ PageID,, 'MusashisModToolbox');
+	//`LOG(default.class @ GetFuncName() @ Builder @ "could not find MCMConfigPage for" @ PageID,, 'MusashisModToolbox');
 
 	return none;
 }
@@ -417,7 +425,7 @@ simulated public function JsonConfig_MCM_Group GetGroup(int PageID, name GroupNa
 		}
 	}
 
-	`LOG(default.class @ GetFuncName() @ "could not find JsonConfig_MCM_Group for" @ PageID @ GroupName,, 'MusashisModToolbox');
+	//`LOG(default.class @ GetFuncName() @ "could not find JsonConfig_MCM_Group for" @ PageID @ GroupName,, 'MusashisModToolbox');
 
 	return none;
 }
@@ -437,7 +445,7 @@ simulated public function JsonConfig_MCM_Element GetElement(int PageID, name Gro
 		}
 	}
 
-	`LOG(default.class @ GetFuncName() @ "could not find JsonConfig_MCM_Element for" @ PageID @ GroupName @ SettingName,, 'MusashisModToolbox');
+	//`LOG(default.class @ GetFuncName() @ "could not find JsonConfig_MCM_Element for" @ PageID @ GroupName @ SettingName,, 'MusashisModToolbox');
 
 	return none;
 }

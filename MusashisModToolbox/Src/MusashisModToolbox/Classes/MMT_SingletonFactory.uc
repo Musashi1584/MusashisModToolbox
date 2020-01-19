@@ -35,7 +35,7 @@ static function JsonConfig_ManagerInterface GetManagerInstance(string InstanceNa
 	if (Instance == none)
 	{
 		Instance = class'WorldInfo'.static.GetWorldInfo().Spawn(default.Class);
-		`LOG(default.class @ GetFuncName() @ "Create new instance" @ default.SINGLETON_PATH,, 'MusashisModToolbox');
+		//`LOG(default.class @ GetFuncName() @ "Create new instance" @ default.SINGLETON_PATH,, 'MusashisModToolbox');
 		default.SINGLETON_PATH = PathName(Instance);
 	}
 
@@ -65,7 +65,7 @@ static function JsonConfig_MCM_Builder GetMCMBuilderInstance(string InstanceName
 	if (Instance == none)
 	{
 		Instance = class'WorldInfo'.static.GetWorldInfo().Spawn(default.Class);
-		`LOG(default.class @ GetFuncName() @ "Create new instance" @ default.SINGLETON_PATH,, 'MusashisModToolbox');
+		//`LOG(default.class @ GetFuncName() @ "Create new instance" @ default.SINGLETON_PATH,, 'MusashisModToolbox');
 		default.SINGLETON_PATH = PathName(Instance);
 	}
 

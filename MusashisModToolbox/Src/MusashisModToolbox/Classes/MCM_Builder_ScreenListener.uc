@@ -23,7 +23,7 @@ event OnInit(UIScreen Screen)
 
 	Temp = class'XComEngine'.static.GetClassByName('JsonConfig_Manager');
 	ManagerTemplate = JsonConfig_Manager(Temp);
-	`LOG(default.class @ GetFuncName() @ `ShowVar(Temp) @ `ShowVar(ManagerTemplate),, 'MusashisModToolbox');
+	//`LOG(default.class @ GetFuncName() @ `ShowVar(Temp) @ `ShowVar(ManagerTemplate),, 'MusashisModToolbox');
 }
 
 defaultproperties
