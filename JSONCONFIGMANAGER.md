@@ -139,20 +139,7 @@ usage for converting values in code:
 
 
 ### Clientside Usage
-So how do you use this awesomeness in your mod?
-You need to compile you mod agains the Highlander.
-Then simply add two files:
-
-1. A mod manager derived from `JsonConfig_Manager`
-```
-class MyModSettingsConfigManager extends JsonConfig_Manager config(MyModSettings);
-```
-
-2. A config file with a valid json config
-```
-[Mod.MyModConfigManager]
-+ConfigProperties = {"BAR":{"Value":"Foo"}}
-```
+@todo
 
 For the tag generation add the AbilityTagExpandHandler code snippet above to you DLCInfo file.
 
@@ -161,7 +148,7 @@ Thats all!
 you can start using your config values like 
 ```
 // in unreal code
-class'MyModSettingsConfigManager'.static.GetConfigStringValue("BAR");
+class'ConfigFactory'.static.GetConfigManager("FancyModManagerName").GetConfigStringValue("BAR");
 
 // in localization files
 LocLongDescription="Hello World <Ability:BAR/>=Bar"
